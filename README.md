@@ -21,7 +21,7 @@ Browse to http://localhost:8080
 ```npm run compile``` - Use this to build the app for use in production. The default build directory is located in ```app/build```.  
 
 ## Hot Loading
-To use hot loading while developing, run the ```npm start``` if you haven't already. Then navigate to http://localhost:8080/webpack-dev-server/#/ to view your changes live.
+To use hot loading while developing, run the ```npm start``` if you haven't already. Then navigate to ```http://localhost:8080/webpack-dev-server/#/``` to view your changes live.
 
 
 ## Dependencies
