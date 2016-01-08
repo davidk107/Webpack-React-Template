@@ -3,6 +3,11 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 // Entry points
 var entryPoints = require("./configs/entry.config.js");
+var devServerEntry = "webpack/hot/dev-server";
+for (var key in entryPoints) {
+    newEntry = [entryPoints[key], devServerEntry];
+    entryPoints[key] = newEntry;
+}
 
 module.exports = {  
     entry: entryPoints,
