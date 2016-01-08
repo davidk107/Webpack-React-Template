@@ -1,0 +1,10 @@
+@import "~normalize.css";
+@import "./common.scss";
+
+.index-wrapper {
+    .mainParagraph {
+        color: blue;
+        width: 900px;
+        margin: 0 auto;
+    }
+}
