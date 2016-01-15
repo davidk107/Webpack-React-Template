@@ -3,19 +3,23 @@ import {render} from 'react-dom';
 import Paragraph from "./js/components/Paragraph";
 require("./stylesheets/index.scss");
 
-var Index = React.createClass({
+class Index extends React.Component {
 
-  render() {
-    return (
-      <div className="index-wrapper wrapper">
-        <h1>Index Page</h1>
-        <a href="login.html">Login</a>
-        <hr/>
-        <br/>
-        <Paragraph/>
-      </div>
-    );
-  }
-});
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="index-wrapper wrapper">
+                <h1>Index Page</h1>
+                <a href="login.html">Login</a>
+                <hr/>
+                <br/>
+                <Paragraph/>
+            </div>
+        );
+    }
+} 
 
 render(<Index/>, document.getElementById("react"));
