@@ -13,7 +13,7 @@ class Index extends React.Component {
         return (
             <div className="index-wrapper wrapper">
                 <h1>Index Page</h1>
-                <a href="login.html">Login</a>
+                <a href="/login.html">Login</a>
                 <hr/>
                 <br/>
                 <Paragraph/>
@@ -22,4 +22,4 @@ class Index extends React.Component {
     }
 } 
 
-render(<Index/>, document.getElementById("react"));
+render(<Index/>, document.getElementById("react-container"));

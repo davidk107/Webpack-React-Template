@@ -11,10 +11,10 @@ class Login extends React.Component {
         return (
             <div className="login-wrapper wrapper">
                 <h1>Login Page</h1>
-                <a href="index.html">Home</a>
+                <a href="/index.html">Home</a>
             </div>
         );
     }
 }
 
-render(<Login/>, document.getElementById("react"));
+render(<Login/>, document.getElementById("react-container"));
