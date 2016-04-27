@@ -1,5 +1,6 @@
 var webpack = require('webpack');  
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var path = require('path');
 
 // Entry points
 var entryPoints = require("./configs/entry.config.js");
@@ -14,6 +15,11 @@ module.exports = {
     output: {
         path: __dirname + "/build",
         filename: '[name]Bundle.js'
+    },
+    resolve: {
+        root: [
+            path.resolve('./app/src')
+        ],
     },
     module: {
         loaders: [
