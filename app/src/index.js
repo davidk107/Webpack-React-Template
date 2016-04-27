@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Paragraph from "js/components/Paragraph";
-require("./stylesheets/index.scss");
+require("stylesheets/index.scss");
 
 class Index extends React.Component {
 
