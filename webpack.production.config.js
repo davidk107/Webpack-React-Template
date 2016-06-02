@@ -1,6 +1,7 @@
 var webpack = require('webpack');  
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 // Environment Variables Plugin
@@ -26,7 +27,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.js$/, loaders: ['babel?presets[]=es2015&presets[]=react'], exclude: /node_modules/ },
-            { test: /\.scss$/, loaders: ['style', 'css', 'sass', 'postcss']}
+            { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass!postcss!')}
         ],
     },
     postcss: function() {
@@ -42,6 +43,7 @@ module.exports = {
                 warnings: false
             }
         }),
+        new ExtractTextPlugin("main.css"),
         envVarPlugin
     ]
 };
