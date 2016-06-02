@@ -1,8 +1,7 @@
 import React from 'react';
-import {render} from 'react-dom';
-require("./stylesheets/login.scss");
+require("./login.scss");
 
-class Login extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -11,10 +10,8 @@ class Login extends React.Component {
         return (
             <div className="login-wrapper wrapper">
                 <h1>Login Page</h1>
-                <a href="/index.html">Home</a>
             </div>
         );
     }
 }
 
-render(<Login/>, document.getElementById("react-container"));

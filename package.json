@@ -1,11 +1,11 @@
 {
   "name": "webpack_react_template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is a basic webpack template that uses React, React Router, and sass. Also features the abilty to generate static html files via the use of static site generator webpack plugin",
+  "main": "./app/src/entry.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --progress --colors --content-base app",
-    "compile": "NODE_ENV=production webpack -p --progress --colors --config webpack.production.config.js "
+    "start": "webpack-dev-server --hot --inline --progress --colors --content-base app --history-api-fallback",
+    "compile": "NODE_ENV=production webpack -p --progress --colors --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,10 +16,13 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.9.1",
     "react-hot-loader": "^1.3.0",
+    "react-router": "^2.4.1",
     "sass-loader": "^3.1.2",
+    "static-site-generator-webpack-plugin": "^2.1.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.10",
     "webpack-dev-server": "^1.14.0"

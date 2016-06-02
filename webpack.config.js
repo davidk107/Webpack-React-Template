@@ -1,24 +1,17 @@
 var webpack = require('webpack');  
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var path = require('path');
 
-// Entry points
-var entryPoints = require("./configs/entry.config.js");
-var devServerEntry = "webpack/hot/dev-server";
-for (var key in entryPoints) {
-    newEntry = [entryPoints[key], devServerEntry];
-    entryPoints[key] = newEntry;
-}
-
 module.exports = {  
-    entry: entryPoints,
+    entry: {
+        main: "./app/src/entry.js"
+    },
     output: {
-        path: __dirname + "/build",
-        filename: '[name]Bundle.js'
+        path: __dirname,
+        filename: 'bundle.js'
     },
     resolve: {
         root: [
-            path.resolve('./app/src')
+            path.resolve('./app/src/js/components')
         ],
     },
     module: {
@@ -27,8 +20,10 @@ module.exports = {
             { test: /\.scss$/, loaders: ["style", "css", "sass"] }
         ]
     },
+    sassLoader: {
+        includePaths: [path.resolve('./app/src/stylesheets')]
+    },
     plugins: [
-      new webpack.NoErrorsPlugin(),
-      new CommonsChunkPlugin("commons.chunk.js")
+      new webpack.NoErrorsPlugin()
     ]
 };

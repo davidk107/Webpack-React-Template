@@ -1,5 +1,8 @@
 @import "~normalize.css";
 
-body {
-    padding: 10px;
+// Put common styles here
+.app-wrapper {
+    a {
+        padding-right: 5px;
+    }
 }

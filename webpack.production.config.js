@@ -1,20 +1,26 @@
 var webpack = require('webpack');  
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var path = require('path');
 var autoprefixer = require('autoprefixer');
 
-// Entry points
-var entryPoints = require("./configs/entry.config.js");
 
-var config = {  
-    entry: entryPoints,
+// Environment Variables Plugin
+var envVarPlugin = new webpack.DefinePlugin({
+  'process.env':{
+    'NODE_ENV': JSON.stringify('production')
+  }
+});
+
+module.exports = {  
+    entry: {
+        main: "./app/src/entry.js"
+    },
     output: {
         path: __dirname + "/app/build",
-        filename: '[name]Bundle.js'
+        filename: 'bundle.js'
     },
     resolve: {
         root: [
-            path.resolve('./app/src')
+            path.resolve('./app/src/js/components')
         ],
     },
     module: {
@@ -26,6 +32,9 @@ var config = {
     postcss: function() {
       return [autoprefixer];
     },
+    sassLoader: {
+        includePaths: [path.resolve('./app/src/stylesheets')]
+    },
     plugins: [
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -33,8 +42,7 @@ var config = {
                 warnings: false
             }
         }),
-        new CommonsChunkPlugin("commons.chunk.js")
+        envVarPlugin
     ]
 };
 
-module.exports = config;
