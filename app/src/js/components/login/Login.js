@@ -1,4 +1,5 @@
 import React from 'react';
+import DocumentTitle from "react-document-title";
 require("./login.scss");
 
 export default class Login extends React.Component {
@@ -8,9 +9,11 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-wrapper wrapper">
-                <h1>Login Page</h1>
-            </div>
+            <DocumentTitle title="Login">
+                <div className="login-wrapper wrapper">
+                    <h1>Login Page</h1>
+                </div>
+            </DocumentTitle>
         );
     }
 }

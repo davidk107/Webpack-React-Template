@@ -5,7 +5,8 @@
   "main": "./app/src/entry.js",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --progress --colors --content-base app --history-api-fallback",
-    "compile": "NODE_ENV=production webpack -p --progress --colors --config webpack.production.config.js"
+    "compile": "NODE_ENV=production webpack -p --progress --colors --config webpack.production.config.js",
+    "compile:static": "NODE_ENV=production webpack -p --progress --colors --config webpack.static.production.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +31,8 @@
   "dependencies": {
     "normalize.css": "^4.1.1",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-document-title": "^2.0.2",
+    "react-dom": "^15.1.0",
+    "react-html-document": "^2.2.0"
   }
 }
