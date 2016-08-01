@@ -19,7 +19,9 @@ export default class RootTemplate extends React.Component {
     render() {
         // Determine description for this page
         let pageMetadata = PATHNAME_TO_PAGE_METADATA[this.props.location.pathname];
-
+        if (!pageMetadata) {
+            pageMetadata = PATHNAME_TO_PAGE_METADATA["/"];
+        }
         let metatags = [
             { name: 'charset', content: "utf-8" },
             { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
